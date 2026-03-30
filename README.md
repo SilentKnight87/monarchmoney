@@ -1,4 +1,30 @@
-# Monarch Money
+# Monarch Money + OpenClaw Integration
+
+> **Fork of [hammem/monarchmoney](https://github.com/hammem/monarchmoney)** with an added [OpenClaw](https://openclaw.ai) skill for AI-agent access to your personal finance data.
+
+This fork keeps the upstream `monarchmoney` Python library untouched and adds an `openclaw-skill/` directory that lets any OpenClaw-powered agent query your Monarch Money accounts, transactions, budgets, and cashflow through simple CLI commands.
+
+### What's added in this fork
+
+| Path | What it does |
+|------|-------------|
+| `openclaw-skill/SKILL.md` | OpenClaw skill metadata and usage docs |
+| `openclaw-skill/scripts/monarch.py` | CLI wrapper (accounts, transactions, budgets, cashflow, refresh) |
+| `openclaw-skill/scripts/login_setup.py` | One-time interactive login with MFA support |
+
+### Quick start (OpenClaw users)
+
+```bash
+clawhub install monarch
+```
+
+Or manually: clone this repo, `pip install monarchmoney`, run `login_setup.py` once, then point your agent at the skill directory.
+
+See [`openclaw-skill/SKILL.md`](openclaw-skill/SKILL.md) for full usage.
+
+---
+
+## Upstream Library
 
 Python library for accessing [Monarch Money](https://www.monarchmoney.com/referral/ngam2i643l) data.
 
@@ -161,3 +187,4 @@ Don't forget to use a password unique to your Monarch account and to enable mult
 *Disclaimer: These projects are neither affiliated nor endorsed by the `monarchmoney` project.*
 
 - [monarch-money-amazon-connector](https://github.com/elsell/monarch-money-amazon-connector): Automate annotating and tagging Amazon transactions (ALPHA)
+- [monarchmoney + OpenClaw](https://github.com/SilentKnight87/monarchmoney): OpenClaw AI-agent skill for querying Monarch Money data via CLI ([ClawHub](https://clawhub.com/skills/monarch))
